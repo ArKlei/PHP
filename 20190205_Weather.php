@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-    <title>Orai Jūsų mieste</title>
+    <title>Weather by cities</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootsrap 4 links -->
