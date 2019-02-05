@@ -65,7 +65,7 @@
     <h4 style="text-align:left"><?php echo
             '<div style="background-color:darkgrey; color:white; font-weight:bold; border-radius:10px; border:0px solid darkgrey; text-align:center; width:150px; padding:5px;">
             '.$city.', <span style="text-transform: uppercase">'.$country.'</span></div></h4><p style="font-weight:bold; color:black">Temperature: '.(int)$temp.' C°, '.$description.', wind '.$wind.' m/s. clouds '.$clouds.' %, '.$pressure.' hpa' ?></p><br>
-        <p class="text-center" style="font-size: 8px; color:grey">ᑕᖇEᗩTEᗪ ᗷY ᗩᖇKᒪEI ᗪEᘔIGᑎ © 2019 EᑕO ᑎT. ᗩᒪᒪ ᖇIGᕼTS ᖇESEᖇᐯEᗪ.</p>
+        <p class="text-center" style="font-size: 8px; color:grey">ᑕᖇEᗩTEᗪ ᗷY ᗩᖇKᒪEI ᗪEᘔIGᑎ © 2019 ᗩᒪᒪ ᖇIGᕼTS ᖇESEᖇᐯEᗪ.</p>
 
 </div>
 </body>
