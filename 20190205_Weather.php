@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-    <title>Weather by cities</title>
+    <title>Orai Jūsų mieste</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootsrap 4 links -->
@@ -24,21 +24,33 @@
         <input type="submit" class="btn btn-danger" value="🅶🅴🆃 🆆🅴🅰🆃🅷🅴🆁">
         </form>
 <?php
+
+    $city = 'Choose city';
+    $country ='country';
+    $temp = 0; 
+    $description = ' - ';
+    $wind = 0;
+    $clouds = 0;
+    $pressure = 0; ?>
+    
+        <?php
+    
     if (isset($_POST['city']) && isset($_POST['country'])) {
     $city = $_POST['city'];
     $country = $_POST['country'];
-    $json = file_get_contents('http://api.openweathermap.org/data/2.5/weather?q='.$city.','.$country.'uk&APPID=5a781dacdcb0f674f483c730fd575e91');
+    
+    $json = file_get_contents('http://api.openweathermap.org/data/2.5/weather?q='.$city.','.$country.'&APPID=5a781dacdcb0f674f483c730fd575e91');
     $masyvas = json_decode($json);
+    
     //°C = K - 273.15
-        $temp = ($masyvas->main->temp) - 273.15;
-        $description = ($masyvas->weather[0]->description);
-        $wind = ($masyvas->wind->speed);
-        $clouds = ($masyvas->clouds->all);
-        $pressure = ($masyvas->main->pressure);
-    } ?>
-    <br>
-    <?php
-
+    $temp = ($masyvas->main->temp) - 273.15; 
+    $description = ($masyvas->weather[0]->description);
+    $wind = ($masyvas->wind->speed);
+    $clouds = ($masyvas->clouds->all);
+    $pressure = ($masyvas->main->pressure);
+    }
+    
+   
     switch ($description) {
     case "clear sky":
         echo '<img src="sun.png" style="width:50px">';
@@ -60,8 +72,8 @@
             break;
     default:
         echo ' ';
-}
-?>
+    } ?>
+    
     <h4 style="text-align:left"><?php echo
             '<div style="background-color:darkgrey; color:white; font-weight:bold; border-radius:10px; border:0px solid darkgrey; text-align:center; width:150px; padding:5px;">
             '.$city.', <span style="text-transform: uppercase">'.$country.'</span></div></h4><p style="font-weight:bold; color:black">Temperature: '.(int)$temp.' C°, '.$description.', wind '.$wind.' m/s. clouds '.$clouds.' %, '.$pressure.' hpa' ?></p><br>
